@@ -8,3 +8,14 @@ body{
     background-color: #522;
     color: #eee;
 }
+
+.clock{
+    width: 140px;
+    height: 50px;
+    background: #c99;
+    border: 3px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7px;
+}
