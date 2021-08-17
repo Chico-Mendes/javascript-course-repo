@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 . Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    
+    <h2>Select a Timezone:</h2>
+    <form>
+        <input type="radio" name="tz" value="PST"> Pacific Standard Time <br>
+        <input type="radio" name="tz" value="EST"> Eastern Standard Time <br>
+        <input type="radio" name="tz" value="PT">  Portugal Time <br>
+        <input type="radio" name="tz" value="CEST"> Central European Standard Time <br>
+        <input type="radio" name="tz" value="AEST"> Australian Eastern Standard Time <br>
+
+        <button type="button" value="Submit" onclick="readForm()">Submit</button>
+    </form>
+
+    <div id="result_tz"></div>
+    <div id="result_time"></div><br>
+
+    <script type="text/javascript">
+    var offset = 0;
+
+    function readForm(){
+        var radioButtons = document.getElementsByName("tz");
+        var radioButtonValue = "No button selected";
+
+        for(var i = 0; i < radioButtons.length; i++){
+            if (radioButtons[i].checked == true){
+                radioButtonValue = radioButtons[i].value;
+                break;
+            }
+        }
+
+        document.getElementById("result_tz").innerHTML = radioButtonValue;
+        var buttonSelected = true;
+        switch(radioButtonValue){
+            case "PST":
+                offset = -8;
+                break;
+            case "EST":
+                offset = -5;
+                break;
+            case "PT":
+                offset = 0;
+                break;
+            case "CEST":
+                offset = 1;
+                break;
+            case "AEST":
+                offset = 10;
+                break;
+            default:
+                buttonSelected = false;
+        }
+        if(buttonSelected) convertTime();
+    }
+
+    function convertTime(){
+        var myDate = new Date();
+        var hour = myDate.getHours() + offset;
+        var min = myDate.getMinutes();
+        var sec = myDate.getSeconds();
+
+        if(hour > 23) hour -= 24;
+        else if(hour < 0) hour += 24;
+
+        var time = ("0" + hour).slice(-2) + ":" + ("0" + min).slice(-2) + ":" + ("0" + sec).slice(-2);
+
+        setTimeout(convertTime,1000);
+        
+        document.getElementById("result_time").innerHTML = time;
+    }
+
+    //convertTime();
+    </script>
+</body>
+</html>
