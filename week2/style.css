@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 25px;
+    background-color: #522;
+    color: #eee;
+}
