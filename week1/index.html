@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 1 . Task 1</title>
+    <title>Week 1 . Task 4</title>
 </head>
 
 <body>
-    Hello World!
-    <br>
+    <h1>Hello World!</h1>
+    
+    <h2>Select a Timezone:</h2>
     <form>
-        Select a Timezone: <br>
         <input type="radio" name="tz" value="PST"> Pacific Standard Time <br>
         <input type="radio" name="tz" value="EST"> Eastern Standard Time <br>
         <input type="radio" name="tz" value="PT">  Portugal Time <br>
@@ -22,6 +22,7 @@
     </form>
 
     <div id="result_tz"></div>
+    <div id="result_time"></div><br>
 
     <script type="text/javascript">
     function readForm(){
@@ -36,7 +37,23 @@
         }
 
         document.getElementById("result_tz").innerHTML = radioButtonValue;
+        convertTime();
     }
+
+    function convertTime(){
+        var myDate = new Date();
+        var hour = myDate.getHours();
+        var min = myDate.getMinutes();
+        var sec = myDate.getSeconds();
+
+        var time = hour + " : " + min + " : " + sec;
+
+        setTimeout(convertTime,1000);
+        
+        document.getElementById("result_time").innerHTML = time;
+    }
+
+    //convertTime();
     </script>
 </body>
 </html>
