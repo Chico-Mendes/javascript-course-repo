@@ -12,14 +12,31 @@
     <br>
     <form>
         Select a Timezone: <br>
-        <input type="radio" name="tz" value="pst"> Pacific Standard Time <br>
-        <input type="radio" name="tz" value="est"> Eastern Standard Time <br>
-        <input type="radio" name="tz" value="pt">  Portugal Time <br>
-        <input type="radio" name="tz" value="cest"> Central European Standard Time <br>
-        <input type="radio" name="tz" value="aest"> Australian Eastern Standard Time <br>
-        <button type="button">Submit</button>
+        <input type="radio" name="tz" value="PST"> Pacific Standard Time <br>
+        <input type="radio" name="tz" value="EST"> Eastern Standard Time <br>
+        <input type="radio" name="tz" value="PT">  Portugal Time <br>
+        <input type="radio" name="tz" value="CEST"> Central European Standard Time <br>
+        <input type="radio" name="tz" value="AEST"> Australian Eastern Standard Time <br>
+
+        <button type="button" value="Submit" onclick="readForm()">Submit</button>
     </form>
 
-    <div id="result tz"></div>
+    <div id="result_tz"></div>
+
+    <script type="text/javascript">
+    function readForm(){
+        var radioButtons = document.getElementsByName("tz");
+        var radioButtonValue = "No button selected";
+
+        for(var i = 0; i < radioButtons.length; i++){
+            if (radioButtons[i].checked == true){
+                radioButtonValue = radioButtons[i].value;
+                break;
+            }
+        }
+
+        document.getElementById("result_tz").innerHTML = radioButtonValue;
+    }
+    </script>
 </body>
 </html>
