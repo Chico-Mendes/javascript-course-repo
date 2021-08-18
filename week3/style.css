@@ -70,10 +70,11 @@ body{
     height: 40%;
     width: 9px;
     background-color: #966;
-    transform: translate(-50%,0);
-    /*border: 1px solid white;*/
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    --rotation: 0;
+    transform-origin: bottom;
+    transform: translate(-50%,0) rotate(calc(var(--rotation) * 1deg));
 }
 
 .clock .hand.second{

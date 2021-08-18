@@ -1,4 +1,10 @@
 var offset = 0;
+const hourHand = document.querySelector('[data-hour-hand]');
+const minuteHand = document.querySelector('[data-min-hand]');
+const secondHand = document.querySelector('[data-sec-hand]');
+
+setInterval(showTime, 1000);
+
 function readForm(){
     var radioButtons = document.getElementsByName("tz");
     var radioButtonValue = "PT";
@@ -27,22 +33,24 @@ function readForm(){
             offset = 0;
             break;
     }
-    //convertTime();
+    showTime();
 }
 
-function convertTime(){
+function showTime(){
     var myDate = new Date();
-    var hour = myDate.getHours() + offset;
-    var min = myDate.getMinutes();
-    var sec = myDate.getSeconds();
+    var secondRatio = myDate.getSeconds()/60;
+    var minuteRatio = (myDate.getMinutes() + secondRatio) / 60;
+    var hourRatio = (myDate.getHours() + offset + minuteRatio) / 12;
 
-    if(hour > 23) hour -= 24;
-    else if(hour < 0) hour += 24;
+    setRotation(secondHand, secondRatio);
+    setRotation(minuteHand, minuteRatio);
+    setRotation(hourHand, hourRatio);
 
-    var time = ("0" + hour).slice(-2) + ":" + ("0" + min).slice(-2) + ":" + ("0" + sec).slice(-2);
-
-    setTimeout(convertTime,1000);
-    
-    document.getElementById("result_time").innerHTML = time;
+    /*if(hour > 23) hour -= 24;
+    else if(hour < 0) hour += 24;*/
 }
-//readForm();
+
+function setRotation(element, rotationRatio){
+    element.style.setProperty(`--rotation`, rotationRatio * 360);
+}
+readForm();
