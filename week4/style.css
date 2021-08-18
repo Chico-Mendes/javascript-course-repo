@@ -101,3 +101,9 @@ body{
     margin-left: 7px;
     font-size: 40px;
 }
+
+.home{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}

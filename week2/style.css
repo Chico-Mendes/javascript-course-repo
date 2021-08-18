@@ -28,3 +28,9 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.home{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}

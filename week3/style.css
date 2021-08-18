@@ -90,3 +90,9 @@ body{
     height: 30%;
     z-index: 10;
 }
+
+.home{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
