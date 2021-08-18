@@ -62,4 +62,18 @@ function showTime(){
 function setRotation(element, rotationRatio){
     element.style.setProperty(`--rotation`, rotationRatio * 360);
 }
+
+function setDigital(){
+    var digital = document.getElementById("digital clock");
+    var analogue = document.getElementById("clock");
+    digital.style.display = "flex";
+    analogue.style.display = "none";
+}
+function setAnalogue(){
+    var digital = document.getElementById("digital clock");
+    var analogue = document.getElementById("clock");
+    digital.style.display = "none";
+    analogue.style.display = "flex";
+}
+setAnalogue();
 readForm();

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Week 4 . Task 2</title>
+    <title>Week 4 . Task 3</title>
 </head>
 
 <body>
@@ -14,8 +14,8 @@
 
         Select a Clock: <br>
         <div class="view" id="view">
-            <input type="radio" name="clockType" value="analogueClock"> Analogue
-            <input type="radio" name="clockType" value="digitalClock" checked="true"> Digital <br>
+            <input type="radio" name="clockType" value="analogueClock" onclick="setAnalogue()" checked="true"> Analogue
+            <input type="radio" name="clockType" value="digitalClock" onclick="setDigital()"> Digital <br>
         </div> <br>
     
         Select a Timezone: <br>
