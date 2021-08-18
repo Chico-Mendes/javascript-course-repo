@@ -5,22 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Week 4 . Task 1</title>
+    <title>Week 4 . Task 2</title>
 </head>
 
 <body>
     <form>
         <h1>Hello World!</h1>
+
+        Select a Clock: <br>
+        <div class="view" id="view">
+            <input type="radio" name="clockType" value="analogueClock"> Analogue
+            <input type="radio" name="clockType" value="digitalClock" checked="true"> Digital <br>
+        </div> <br>
     
         Select a Timezone: <br>
         <div class="timezone">
-        <input type="radio" name="tz" value="PST"> Pacific Standard Time <br>
-        <input type="radio" name="tz" value="EST"> Eastern Standard Time <br>
-        <input type="radio" name="tz" value="PT" checked="true">  Portugal Time <br>
-        <input type="radio" name="tz" value="CEST"> Central European Standard Time <br>
-        <input type="radio" name="tz" value="AEST"> Australian Eastern Standard Time <br>
-        </div><div class="submitButton">
-        <button type="button" value="Submit" onclick="readForm()">Submit</button></div>
+        <input type="radio" name="tz" value="PST" onclick="readForm()"> Pacific Standard Time <br>
+        <input type="radio" name="tz" value="EST" onclick="readForm()"> Eastern Standard Time <br>
+        <input type="radio" name="tz" value="PT" onclick="readForm()" checked="true">  Portugal Time <br>
+        <input type="radio" name="tz" value="CEST" onclick="readForm()"> Central European Standard Time <br>
+        <input type="radio" name="tz" value="AEST" onclick="readForm()"> Australian Eastern Standard Time <br>
+        </div>
     </form>
 
     <div class="clock" id="clock">
