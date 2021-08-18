@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Week 3 . Task 1</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    
+    <form>
+        Select a Timezone: <br>
+        <div class="timezone">
+        <input type="radio" name="tz" value="PST"> Pacific Standard Time <br>
+        <input type="radio" name="tz" value="EST"> Eastern Standard Time <br>
+        <input type="radio" name="tz" value="PT" checked="true">  Portugal Time <br>
+        <input type="radio" name="tz" value="CEST"> Central European Standard Time <br>
+        <input type="radio" name="tz" value="AEST"> Australian Eastern Standard Time <br>
+        </div><div class="submitButton">
+        <button type="button" value="Submit" onclick="readForm()">Submit</button></div>
+    </form>
+
+    <div id="result_time" class="clock"></div><br>
+
+    <script defer src="script.js"></script>
+</body>
+</html>
