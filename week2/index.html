@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Week 2 . Task 3</title>
+    <title>Week 2 . Task 4</title>
 </head>
 
 <body>
@@ -13,16 +13,16 @@
     
     <form>
         Select a Timezone: <br>
+        <div class="timezone">
         <input type="radio" name="tz" value="PST"> Pacific Standard Time <br>
         <input type="radio" name="tz" value="EST"> Eastern Standard Time <br>
         <input type="radio" name="tz" value="PT" checked="true">  Portugal Time <br>
         <input type="radio" name="tz" value="CEST"> Central European Standard Time <br>
         <input type="radio" name="tz" value="AEST"> Australian Eastern Standard Time <br>
-
-        <button type="button" value="Submit" onclick="readForm()">Submit</button>
+        </div><div class="submitButton">
+        <button type="button" value="Submit" onclick="readForm()">Submit</button></div>
     </form>
 
-    <div id="result_tz"></div>
     <div id="result_time" class="clock"></div><br>
 
     <script type="text/javascript">
@@ -38,8 +38,6 @@
                 break;
             }
         }
-
-        document.getElementById("result_tz").innerHTML = radioButtonValue;
 
         switch(radioButtonValue){
             case "PST":
@@ -58,6 +56,7 @@
                 offset = 0;
                 break;
         }
+        convertTime();
     }
 
     function convertTime(){
@@ -76,7 +75,6 @@
         document.getElementById("result_time").innerHTML = time;
     }
     readForm();
-    convertTime();
     </script>
 </body>
 </html>
