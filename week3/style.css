@@ -9,6 +9,16 @@ body{
     color: #eee;
 }
 
+
+.timezone{
+    font: 21px sans-serif;
+}
+
+.submitButton{
+    display: flex;
+    justify-content: center;
+}
+
 .clock{
     width: 250px;
     height: 250px;
@@ -30,11 +40,11 @@ body{
     transform: translate(-50%,-50%);
 }
 
-.timezone{
-    font: 21px sans-serif;
-}
-
-.submitButton{
-    display: flex;
-    justify-content: center;
+.clock .number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #ddd;
+    text-align: center;
+    border: solid black 2px;
 }
