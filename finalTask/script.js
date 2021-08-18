@@ -38,22 +38,22 @@ function readForm(){
 
 function showTime(){
     var myDate = new Date();
-    var hour = myDate.getHours() + offset;
-    var min = myDate.getMinutes();
-    var sec = myDate.getSeconds();
-    if(hour > 23) hour -= 24;
-    else if(hour < 0) hour += 24;
-
-    // analogue
-    var secondRatio = sec/60;
-    var minuteRatio = (min + secondRatio) / 60;
-    var hourRatio = (hour + minuteRatio) / 12;
+    var secondRatio = myDate.getSeconds()/60;
+    var minuteRatio = (myDate.getMinutes() + secondRatio) / 60;
+    var hourRatio = (myDate.getHours() + offset + minuteRatio) / 12;
 
     setRotation(secondHand, secondRatio);
     setRotation(minuteHand, minuteRatio);
     setRotation(hourHand, hourRatio);
 
     // digital
+    var hour = myDate.getHours() + offset;
+    var min = myDate.getMinutes();
+    var sec = myDate.getSeconds();
+
+    if(hour > 23) hour -= 24;
+    else if(hour < 0) hour += 24;
+
     var time = ("0" + hour).slice(-2) + ":" + ("0" + min).slice(-2) + ":" + ("0" + sec).slice(-2);
     
     document.getElementById("digital clock").innerHTML = time;
