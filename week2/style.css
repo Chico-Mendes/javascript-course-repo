@@ -19,3 +19,12 @@ body{
     justify-content: center;
     margin-left: 7px;
 }
+
+.timezone{
+    font: 21px sans-serif;
+}
+
+.submitButton{
+    display: flex;
+    justify-content: center;
+}
