@@ -46,5 +46,18 @@ body{
     height: 100%;
     color: #ddd;
     text-align: center;
-    border: solid black 2px;
+    --rotation: 0;
+    transform: rotate(var(--rotation));
 }
+
+.clock .number01{ --rotation: 30deg; }
+.clock .number02{ --rotation: 60deg; }
+.clock .number03{ --rotation: 90deg; }
+.clock .number04{ --rotation: 120deg; }
+.clock .number05{ --rotation: 150deg; }
+.clock .number06{ --rotation: 180deg; }
+.clock .number07{ --rotation: 210deg; }
+.clock .number08{ --rotation: 240deg; }
+.clock .number09{ --rotation: 270deg; }
+.clock .number10{ --rotation: 300deg; }
+.clock .number11{ --rotation: 330deg; }
