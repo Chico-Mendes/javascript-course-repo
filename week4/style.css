@@ -11,12 +11,10 @@ body{
 
 
 .timezone{
-    font: 21px sans-serif;
+    font: 20px sans-serif;
 }
-
-.submitButton{
-    display: flex;
-    justify-content: center;
+.view{
+    font: 20px sans-serif;
 }
 
 .clock{
